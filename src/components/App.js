@@ -10,10 +10,10 @@ const App = () => {
             {/* Do not remove the main div */}
             <h1>TO-DO List</h1>
             <Input items={items} setItems={setItems} />
-            <ul>
+            <ul className="todo-list">
                 {items.map((item, index) => {
                     return (
-                        <li key={index}>
+                        <li key={index} className="todo-item">
                             <h4>{item}</h4>
                             <button
                                 onClick={() =>

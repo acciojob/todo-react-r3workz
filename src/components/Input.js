@@ -4,18 +4,20 @@ const input = (props) => {
     const [input, setInput] = useState("");
 
     const addItems = () => {
-        props.setItems([...props.items, input]);
-        setInput("");
+        if(input.length>0){
+            props.setItems([...props.items, input]);
+            setInput("");
+        }
     };
     return (
-        <div>
+        <div className="input-container">
             <input
                 type="text"
                 name="input"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
             />
-            <button onClick={() => addItems()}>Add TODO</button>
+            <button onClick={() => addItems()}>Add Todo</button>
         </div>
     );
 };
